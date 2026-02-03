@@ -32,56 +32,42 @@
     <!-- Header com Contato -->
     <header>
         <nav class="main-nav">
-                <div class="nav-content">
+            <div class="nav-content">
 
-                    <ul class="nav-menu hidden-blurless">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#especialidades">Especialidades</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
+                <ul class="nav-menu hidden-blurless">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
 
-                    <button class="menu-toggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content hidden-blurless" id="main-content">
+            <div class="hero-content hidden" id="main-content">
                 <img src="Media/Logo sem fundo.png" alt="">
             </div>
-        
+
         </div>
     </section>
-
-    <!-- Badges de Certificação -->
-    <div class="container">
-        <div class="badges-container hidden-blurless">
-            <div class="badge-item">
-                <i class="fas fa-balance-scale"></i>
-                <span>OAB Ativo</span>
-            </div>
-            <div class="badge-item">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Especializado em Direito Médico</span>
-            </div>
-            <div class="badge-item">
-                <i class="fas fa-shield-alt"></i>
-                <span>Sigilo Garantido</span>
-            </div>
-        </div>
-    </div>
 
     <!-- Sobre o Advogado -->
     <section class="about" id="sobre">
         <div class="container">
             <div class="about-content">
+                <div class="about-image hidden-blurless">
+                    <img src="Media/Foto do Advogado.png"
+                        alt="Dr. Eric Macêdo - Advogado especialista em Direito Médico">
+                </div>
                 <div class="about-text hidden ">
                     <h2>Quem é <strong>Eric Macêdo</strong></h2>
                     <p>Ingressei na Advocacia em <strong>2014</strong>, atuando profissionalmente nas varas da Justiça
@@ -96,16 +82,14 @@
                         protegendo os beneficiários de possíveis práticas abusivas das operadoras.</p>
                     <p><strong>Sempre à disposição! ⚖️</strong></p>
                 </div>
-                <div class="about-image hidden-blurless">
-                    <img src="Media/Foto do Advogado.png"
-                        alt="Dr. Eric Macêdo - Advogado especialista em Direito Médico">
-                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Especialidades -->
     <section class="specialties" id="especialidades">
+
         <div class="wave wave-top">
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path
@@ -114,47 +98,143 @@
             </svg>
         </div>
 
-        <div class="container">
-            <span class="centralizador hidden-blurless">
-                <h2 style="color: white;">Nossas Especialidades</h2>
-            </span>
 
-            <div class="specialties-grid hidden">
-                <div class="specialty-card">
-                    <div class="specialty-icon">
-                        <img src="https://plus.unsplash.com/premium_photo-1668058723804-d7dcd1ffa4c9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="Advogado analisando processo ético-profissional">
-                    </div>
-                    <div class="speciality-text">
-                        <h3>Defesa Ética Profissional</h3>
-                        <p>Atuação especializada perante CRM e CRO em processos ético-disciplinares, com defesa
-                            estratégica para médicos e dentistas.</p>
+        <div class="container-specialties">
+            <div class="section-header">
+                <h2>Áreas De Atuação</h2>
+                <hr>
+                <p>Conheça nossas Especialidades</p>
+            </div>
+
+            <div class="carousel-container">
+                
+
+                <div class="carousel-wrapper">
+                    <div class="specialties-carousel">
+
+                        <!-- Card 1: Direito Médico -->
+                        <div class="specialty-card" id="spe-card-1">
+                            <!-- Link que cobre todo o card -->
+                            <a href="blog.html" aria-label="Saiba mais sobre Direito Médico"></a>
+
+                            <div class="speciality-text">
+                                <h3>Direito Médico</h3>
+                                <p>Defesa especializada para médicos em processos cíveis, responsabilidade profissional,
+                                    contratos médicos e gestão de clínicas e consultórios.</p>
+                            </div>
+
+                            <!-- Ícone que aparece no hover -->
+                            <div class="card-link-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Defesa Ética Profissional -->
+                        <div class="specialty-card" id="spe-card-2">
+                            <a href="defesa-etica.html" aria-label="Saiba mais sobre Defesa Ética Profissional"></a>
+
+                            <div class="speciality-text">
+                                <h3>Defesa Ética Profissional</h3>
+                                <p>Representação de médicos e dentistas perante CRM e CRO em processos
+                                    ético-disciplinares, com defesa estratégica para preservar a inscrição profissional.
+                                </p>
+                            </div>
+
+                            <div class="card-link-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Direito Odontológico -->
+                        <div class="specialty-card" id="spe-card-3">
+                            <a href="direito-odontologico.html" aria-label="Saiba mais sobre Direito Odontológico"></a>
+
+                            <div class="speciality-text">
+                                <h3>Direito Odontológico</h3>
+                                <p>Proteção jurídica para dentistas em processos éticos no CRO, responsabilidade civil,
+                                    gestão de clínicas odontológicas e defesa em procedimentos estéticos.</p>
+                            </div>
+
+                            <div class="card-link-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Direito da Saúde -->
+                        <div class="specialty-card" id="spe-card-4">
+                            <a href="direito-saude.html" aria-label="Saiba mais sobre Direito da Saúde"></a>
+
+                            <div class="speciality-text">
+                                <h3>Direito da Saúde</h3>
+                                <p>Consultoria para hospitais, clínicas e instituições de saúde em conformidade
+                                    regulatória, normas sanitárias da ANVISA e adequação às legislações do setor.</p>
+                            </div>
+
+                            <div class="card-link-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Ações contra Planos de Saúde -->
+                        <div class="specialty-card" id="spe-card-5">
+                            <a href="acoes-planos-de-saude.html"
+                                aria-label="Saiba mais sobre Ações contra Planos de Saúde"></a>
+
+                            <div class="speciality-text">
+                                <h3>Ações contra Planos de Saúde</h3>
+                                <p>Defesa de beneficiários contra negativas abusivas de cobertura, atrasos em reembolsos
+                                    e práticas ilícitas das operadoras de planos de saúde.</p>
+                            </div>
+
+                            <div class="card-link-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Defesa do Profissional de Saúde -->
+                        <div class="specialty-card" id="spe-card-6">
+                            <a href="defesa-profissional-saude.html"
+                                aria-label="Saiba mais sobre Defesa do Profissional de Saúde"></a>
+
+                            <div class="speciality-text">
+                                <h3>Defesa do Profissional de Saúde</h3>
+                                <p>Proteção jurídica para enfermeiros, fisioterapeutas, psicólogos e demais
+                                    profissionais de saúde em questões éticas, civis e trabalhistas.</p>
+                            </div>
+
+                            <div class="card-link-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                                </svg>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+                <span class="botoes">
+                    <button class="carousel-btn prev-btn" aria-label="Anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
 
-                <div class="specialty-card">
-                    <div class="specialty-icon">
-                        <img src="https://images.unsplash.com/photo-1666886573531-48d2e3c2b684?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGxhbm8lMjBkZSUyMHNhJUMzJUJBZGV8ZW58MHx8MHx8fDA%3D"
-                            alt="Processos contra planos de saúde">
-                    </div>
-                    <div class="speciality-text">
-                        <h3>Ações contra Planos de Saúde</h3>
-                        <p>Combate a negativas de cobertura, atrasos em reembolsos e outras práticas abusivas dos planos
-                            de saúde em defesa dos beneficiários.</p>
-                    </div>
-                </div>
+                    <button class="carousel-btn next-btn" aria-label="Próximo">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </span>
+                
+            </div>
 
-                <div class="specialty-card">
-                    <div class="specialty-icon">
-                        <img src="https://media.istockphoto.com/id/600698208/pt/foto/senior-doctor-with-administrator.webp?a=1&b=1&s=612x612&w=0&k=20&c=Vkl6pIp2tFPi9WJmlBjbKcIoHtD4-XXOs8eqAn6LnHA="
-                            alt="Consultoria em direito médico">
-                    </div>
-                    <div class="speciality-text">
-                        <h3>Direito Médico</h3>
-                        <p>Expertise completa em responsabilidade profissional, contratos médicos, telemedicina e
-                            regulamentação da prática profissional da saúde.</p>
-                    </div>
-                </div>
+            <div class="carousel-dots">
+                <!-- Os pontos serão gerados dinamicamente via JavaScript -->
             </div>
         </div>
 
@@ -213,65 +293,75 @@
                 </path>
             </svg>
         </div>
-    <div class="container">
-        <span class="hidden">
-            <h2><strong>Produção Técnica</strong></h2>
-        </span>
-        <div class="articles-grid hidden-blurless">
-            <article class="article-card">
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-year">2016</span>
-                        <span class="article-type">Artigo</span>
-                    </div>
-                    <h3>Os abusos cometidos na exposição de pessoas em veículos midiáticos e a sua responsabilização judicial</h3>
-                    <p>Análise crítica sobre os excessos na exposição midiática de indivíduos e os mecanismos jurídicos disponíveis para responsabilização. O artigo discute os limites éticos da mídia, direitos da personalidade e jurisprudência recente sobre danos morais em casos de exposição indevida.</p>
-                   
-                    <a href="#contato" class="read-more" aria-label="Consultar sobre este artigo">
-                        <i class="fas fa-file-alt"></i> Solicitar cópia completa »
-                    </a>
-                </div>
-            </article>
+        <div class="container">
+            <span class="centralizador hidden">
+                <h2><strong>Produção Técnica</strong></h2>
+            </span>
+            <div class="articles-grid hidden-blurless">
+                <article class="article-card">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-year">2016</span>
+                            <span class="article-type">Artigo</span>
+                        </div>
+                        <h3>Os abusos cometidos na exposição de pessoas em veículos midiáticos e a sua responsabilização
+                            judicial</h3>
+                        <p>Análise crítica sobre os excessos na exposição midiática de indivíduos e os mecanismos
+                            jurídicos disponíveis para responsabilização. O artigo discute os limites éticos da mídia,
+                            direitos da personalidade e jurisprudência recente sobre danos morais em casos de exposição
+                            indevida.</p>
 
-            <article class="article-card">
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-year">2015</span>
-                        <span class="article-type">Artigo</span>
+                        <a href="#contato" class="read-more" aria-label="Consultar sobre este artigo">
+                            <i class="fas fa-file-alt"></i> Solicitar cópia completa »
+                        </a>
                     </div>
-                    <h3>Ressocialização: quem é o verdadeiro beneficiado?</h3>
-                    <p>Reflexão profunda sobre o sistema penitenciário brasileiro e a efetividade dos programas de ressocialização. O trabalho analisa dados estatísticos, políticas públicas e discute se o processo de ressocialização beneficia mais o detento, a sociedade ou o Estado, propondo melhorias baseadas em experiências internacionais.</p>
-                    
-                    <a href="#contato" class="read-more" aria-label="Consultar sobre este artigo">
-                        <i class="fas fa-file-alt"></i> Solicitar cópia completa »
-                    </a>
-                </div>
-            </article>
+                </article>
 
-            <article class="article-card">
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-year">2014</span>
-                        <span class="article-type">Artigo</span>
+                <article class="article-card">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-year">2015</span>
+                            <span class="article-type">Artigo</span>
+                        </div>
+                        <h3>Ressocialização: quem é o verdadeiro beneficiado?</h3>
+                        <p>Reflexão profunda sobre o sistema penitenciário brasileiro e a efetividade dos programas de
+                            ressocialização. O trabalho analisa dados estatísticos, políticas públicas e discute se o
+                            processo de ressocialização beneficia mais o detento, a sociedade ou o Estado, propondo
+                            melhorias baseadas em experiências internacionais.</p>
+
+                        <a href="#contato" class="read-more" aria-label="Consultar sobre este artigo">
+                            <i class="fas fa-file-alt"></i> Solicitar cópia completa »
+                        </a>
                     </div>
-                    <h3>Cheiro de repressão no ar: Pai, afasta de mim esse cálice</h3>
-                    <p>Análise jurídico-social sobre liberdade de expressão, censura e direitos fundamentais no contexto brasileiro. O artigo faz paralelos históricos, discute a constitucionalidade de medidas restritivas e defende a liberdade de expressão como pilar da democracia, citando casos emblemáticos da jurisprudência nacional.</p>
-                
-                    <a href="#contato" class="read-more" aria-label="Consultar sobre este artigo">
-                        <i class="fas fa-file-alt"></i> Solicitar cópia completa »
-                    </a>
-                </div>
-            </article>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-year">2014</span>
+                            <span class="article-type">Artigo</span>
+                        </div>
+                        <h3>Cheiro de repressão no ar: Pai, afasta de mim esse cálice</h3>
+                        <p>Análise jurídico-social sobre liberdade de expressão, censura e direitos fundamentais no
+                            contexto brasileiro. O artigo faz paralelos históricos, discute a constitucionalidade de
+                            medidas restritivas e defende a liberdade de expressão como pilar da democracia, citando
+                            casos emblemáticos da jurisprudência nacional.</p>
+
+                        <a href="#contato" class="read-more" aria-label="Consultar sobre este artigo">
+                            <i class="fas fa-file-alt"></i> Solicitar cópia completa »
+                        </a>
+                    </div>
+                </article>
+            </div>
         </div>
-    </div>
-    <div class="wave wave-bottom">
+        <div class="wave wave-bottom">
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path
                     d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z">
                 </path>
             </svg>
         </div>
-</section>
+    </section>
 
     <!-- Atendimento Nacional -->
     <section class="location-section">
