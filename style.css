@@ -839,6 +839,7 @@ h2 {
     background-image: url('https://media.istockphoto.com/id/2256571391/pt/foto/stack-of-books-close-up-open-book-on-the-table-in-library-back-to-school-concept-open-book-on.jpg?s=612x612&w=0&k=20&c=nq5WANAhE4Y-NP_ngt8Sj1mGzPy1l98JMxmCExoSQLI=');
     background-size: cover;
     height: 120vh;
+    margin-top: 120px;
 }
 
 .articles::before {
@@ -847,7 +848,7 @@ h2 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 120vh;
+    height: 110vh;
     background-color: rgba(0, 0, 0, 0.699);
 }
 
@@ -859,12 +860,18 @@ h2 {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 
+.centralizador{
+    display: grid;
+    place-items: center;
+    margin-top: 30px;
+}
+
+
 .articles-grid {
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2.5rem;
-    margin-bottom: 200px;
 }
 
 .article-card {
@@ -1193,12 +1200,13 @@ h2 {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow-xl);
-    height: 600px;
+    width: 450px;
+    height: 490px;
 }
 
 .map-frame {
-    width: 100%;
-    height: 100%;
+    width: 490px;
+    height: 490px;
     position: relative;
 }
 
