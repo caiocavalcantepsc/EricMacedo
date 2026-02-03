@@ -550,13 +550,13 @@ h2 {
     transition: opacity var(--transition-base), transform var(--transition-base);
 }
 
-.botoes{
+.botoes {
     display: flex;
     gap: 10px;
 }
 
 
-#btn-left{
+#btn-left {
     display: none;
 }
 
@@ -1761,24 +1761,55 @@ h2 {
 
 /* ===== ANIMAÇÕES ===== */
 @keyframes arrowPulse {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(5px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    33% { transform: translateY(-20px) rotate(120deg); }
-    66% { transform: translateY(20px) rotate(240deg); }
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    33% {
+        transform: translateY(-20px) rotate(120deg);
+    }
+
+    66% {
+        transform: translateY(20px) rotate(240deg);
+    }
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 @keyframes pulse-ring {
-    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
-    100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
 }
 
 /* ===== OTIMIZAÇÕES GERAIS ===== */
@@ -1830,27 +1861,34 @@ textarea:focus {
         --container-padding: 1.5rem;
     }
 
-    .about{
+    .about {
         min-height: 40vh;
     }
 
     .about-text {
-        width: auto; /* Removido width fixo */
+        width: auto;
+        /* Removido width fixo */
     }
 
     .about-image img {
-        width: 100%; /* Ajustado para responsividade */
-        max-width: 500px; /* Limite máximo */
+        width: 100%;
+        /* Ajustado para responsividade */
+        max-width: 500px;
+        /* Limite máximo */
     }
 
     .about-content {
-        display: grid; /* Mantém grid, não inline */
-        grid-template-columns: 1fr 1fr; /* Coloca lado a lado */
-        gap: 3rem; /* Espaçamento entre imagem e texto */
-        align-items: center; /* Alinha verticalmente */
+        display: grid;
+        /* Mantém grid, não inline */
+        grid-template-columns: 1fr 1fr;
+        /* Coloca lado a lado */
+        gap: 3rem;
+        /* Espaçamento entre imagem e texto */
+        align-items: center;
+        /* Alinha verticalmente */
     }
 
-    .carousel-container{
+    .carousel-container {
         display: grid;
         margin-top: 50px;
     }
@@ -1859,15 +1897,15 @@ textarea:focus {
         min-width: 300px;
     }
 
-    .carousel-dots{
+    .carousel-dots {
         display: none;
     }
-    
-    #btn-left-horizontal{
-        display:none;
+
+    #btn-left-horizontal {
+        display: none;
     }
 
-    #btn-left{
+    #btn-left {
         display: flex;
     }
 
@@ -1899,11 +1937,11 @@ textarea:focus {
         height: 450px;
     }
 
-    .testimonials{
+    .testimonials {
         min-height: 30vh;
     }
 
-    .info-card{
+    .info-card {
         min-width: 400px;
     }
 
@@ -1949,16 +1987,17 @@ textarea:focus {
         margin-left: auto;
     }
 
-    
 
 
-    .hero{
+
+    .hero {
         min-height: 101vh;
     }
 }
 
 /* Tablet Portrait (768px a 576px) */
 @media (max-width: 768px) {
+
     .hero,
     .hero-blog {
         min-height: 100vh;
@@ -2036,9 +2075,9 @@ textarea:focus {
     }
 
     .specialty-card {
-        height: auto;
-        min-height: 400px;
-        padding: 2rem;
+        min-height: 190px;
+        padding: 0.5rem;
+        width: 10px;
     }
 
     .specialty-icon {
@@ -2053,11 +2092,15 @@ textarea:focus {
         height: 350px;
     }
 
-    #btn-left-horizontal{
+    #btn-left-horizontal {
         display: none;
     }
 
-    #btn-left{
+    #btn-left {
+        display: flex;
+    }
+
+    .botoes {
         display: flex;
     }
 
@@ -2128,7 +2171,8 @@ textarea:focus {
         width: 100%;
         justify-content: center;
     }
-    .botoes{
+
+    .botoes {
         display: flex;
         gap: 10px;
     }
@@ -2136,6 +2180,7 @@ textarea:focus {
 
 /* Mobile (576px a 425px) */
 @media (max-width: 576px) {
+
     .hero,
     .hero-blog {
         min-height: 100vh;
@@ -2182,7 +2227,10 @@ textarea:focus {
     }
 
     .specialty-card {
-        min-height: 350px;
+        height: auto;
+        min-height: 400px;
+        padding: 2rem;
+        width: 400px;
     }
 
     .map-container {
@@ -2192,6 +2240,18 @@ textarea:focus {
     .info-features {
         flex-direction: column;
         gap: 1rem;
+    }
+
+    #btn-left-horizontal {
+        display: none;
+    }
+
+    #btn-left {
+        display: flex;
+    }
+
+    .botoes {
+        display: flex;
     }
 
     .footer-grid {
@@ -2288,13 +2348,11 @@ textarea:focus {
     }
 
     .specialty-card {
-        min-width: 100%;
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-        padding: 1.5rem;
-        height: contain;
+        min-height: 190px;
+        padding: 0.5rem;
+        width: 10px;
     }
+
 
     .specialty-card h3 {
         font-size: 1.3rem;
@@ -2364,26 +2422,26 @@ textarea:focus {
         flex-direction: column;
         gap: 2rem;
     }
-    
+
     .about-image {
         text-align: center;
     }
-    
+
     .about-image img {
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
     }
-    
+
     .about-text {
         width: 100%;
     }
-    
+
     .about-text h2 {
         text-align: center;
         margin-bottom: 1.5rem;
     }
-    
+
     .about-text p {
         text-align: justify;
         line-height: 1.6;
@@ -2487,8 +2545,26 @@ textarea:focus {
         font-size: 1.1rem;
     }
 
+    .specialty-card {
+        min-height: 190px;
+        padding: 0.5rem;
+        width: 10px;
+    }
+
     .specialty-content h4 {
         font-size: 1.1rem;
+    }
+
+    #btn-left-horizontal {
+        display: none;
+    }
+
+    #btn-left {
+        display: flex;
+    }
+
+    .botoes {
+        display: flex;
     }
 
     /* Seção Sobre - um abaixo do outro */
@@ -2497,26 +2573,26 @@ textarea:focus {
         flex-direction: column;
         gap: 2rem;
     }
-    
+
     .about-image {
         text-align: center;
     }
-    
+
     .about-image img {
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
     }
-    
+
     .about-text {
         width: 100%;
     }
-    
+
     .about-text h2 {
         text-align: center;
         margin-bottom: 1.5rem;
     }
-    
+
     .about-text p {
         text-align: justify;
         line-height: 1.6;
@@ -2525,6 +2601,7 @@ textarea:focus {
 
 /* Mobile Muito Pequeno (até 375px) */
 @media (max-width: 375px) {
+
     .hero,
     .hero-blog {
         min-height: 100vh;
@@ -2553,6 +2630,7 @@ textarea:focus {
 
 /* Landscape para Mobile */
 @media (max-height: 600px) and (orientation: landscape) {
+
     .hero,
     .hero-blog {
         min-height: 120vh;
