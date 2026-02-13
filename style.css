@@ -2084,7 +2084,7 @@ textarea:focus {
     }
 
     .specialty-card {
-        min-height: 190px;
+        min-height: 110px;
         padding: 0.5rem;
         width: 10px;
     }
@@ -2106,7 +2106,7 @@ textarea:focus {
     }
 
     #btn-left {
-        display: flex;
+        display: none;
     }
 
     .botoes {
@@ -2237,9 +2237,10 @@ textarea:focus {
 
     .specialty-card {
         height: auto;
-        min-height: 400px;
+        min-height: 110px;
         padding: 2rem;
-        width: 400px;
+        width: 100%;
+        min-width: 100%;
     }
 
     .map-container {
@@ -2260,7 +2261,7 @@ textarea:focus {
     }
 
     .botoes {
-        display: flex;
+        display: flex ;
     }
 
     .footer-grid {
@@ -2302,7 +2303,7 @@ textarea:focus {
         height: 30px;
     }
 
-    /* Carrossel Mobile */
+    /* Carrossel Mobile - CORRIGIDO */
     .specialties {
         padding: calc(var(--section-spacing) / 1.5) 0;
         min-height: auto;
@@ -2345,23 +2346,43 @@ textarea:focus {
         width: 100%;
         flex-direction: column;
         gap: 15px;
+        position: relative;
     }
 
     .carousel-wrapper {
         width: 100%;
-        overflow: visible;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-snap-stop: always;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+
+    .carousel-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .carousel-wrapper {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
     .specialties-carousel {
-        gap: 15px;
+        display: flex;
+        gap: 0;
+        width: 100%;
     }
 
     .specialty-card {
-        min-height: 190px;
-        padding: 0.5rem;
-        width: 10px;
+        min-height: 110px;
+        padding: 2rem;
+        width: 100%;
+        min-width: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        box-sizing: border-box;
     }
-
 
     .specialty-card h3 {
         font-size: 1.3rem;
@@ -2377,29 +2398,23 @@ textarea:focus {
         width: 40px;
         height: 40px;
         font-size: 1rem;
-        position: relative;
-        margin: 0 auto;
-    }
-
-    .carousel-container {
-        position: relative;
-    }
-
-    .carousel-btn.prev {
         position: absolute;
-        left: 20px;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 10;
+        margin: 0;
     }
 
-    .carousel-btn.next {
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
+    .carousel-btn.prev-btn {
+        left: 10px;
+    }
+
+    .carousel-btn.next-btn {
+        right: 10px;
     }
 
     .carousel-dots {
+        display: flex;
         margin-top: 1rem;
         gap: 10px;
     }
@@ -2524,8 +2539,13 @@ textarea:focus {
     }
 
     .specialty-card {
-        min-height: 320px;
-        padding: 1.2rem;
+        min-height: 110px;
+        padding: 2rem;
+        width: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
     }
 
     .whatsapp-float a {
@@ -2555,9 +2575,13 @@ textarea:focus {
     }
 
     .specialty-card {
-        min-height: 190px;
-        padding: 0.5rem;
-        width: 10px;
+        min-height: 110px;
+        padding: 2rem;
+        width: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
     }
 
     .specialty-content h4 {
@@ -2569,11 +2593,11 @@ textarea:focus {
     }
 
     #btn-left {
-        display: flex;
+        display: none;
     }
 
     .botoes {
-        display: flex;
+        display: none;
     }
 
     /* Seção Sobre - um abaixo do outro */
@@ -2632,8 +2656,13 @@ textarea:focus {
     }
 
     .specialty-card {
-        min-height: 320px;
-        padding: 1.2rem;
+        min-height: 100px;
+        padding: 1.5rem;
+        width: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
     }
 }
 
@@ -2654,6 +2683,11 @@ textarea:focus {
     .specialty-card {
         height: auto;
         min-height: 280px;
+        width: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
     }
 
     .nav-content {
