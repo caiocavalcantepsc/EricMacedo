@@ -1984,6 +1984,7 @@ textarea:focus {
     background: var(--secondary-color);
 }
 
+
 /* Tablet Landscape (1024px a 768px) */
 @media (max-width: 1024px) {
     :root {
@@ -2001,11 +2002,11 @@ textarea:focus {
     }
 
     .about-text h2{
-        font-size: 1.0rem;
+        font-size: 1.3rem;
     }
 
     .about-text p{
-        font-size: 0.5rem;
+        font-size: 0.8rem;
     }
 
     .about-image img {
@@ -3170,8 +3171,7 @@ textarea:focus {
         width: 100%;
         min-width: 100%;
         box-sizing: border-box;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
+        
     }
 
     .whatsapp-float a {
@@ -3206,12 +3206,29 @@ textarea:focus {
         width: 100%;
         min-width: 100%;
         box-sizing: border-box;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
+
     }
 
     .specialty-content h4 {
         font-size: 1.1rem;
+    }
+
+    
+    .carousel-container {
+        display: grid;
+        margin-top: 50px;
+    }
+
+    .specialty-card {
+        min-width: 300px;
+    }
+
+    .carousel-dots {
+        display: none;
+    }
+
+    .carousel-btn{
+        display: none;
     }
 
     #btn-left-horizontal {
@@ -3222,9 +3239,22 @@ textarea:focus {
         display: none;
     }
 
-    .botoes {
+    #btn-right{
+        display: none;  
+    }
+
+    
+    /* #btn-left-horizontal {
         display: none;
     }
+
+    #btn-left {
+        display: none;
+    }
+
+    .botoes {
+        display: none;
+    } */
 
     /* Seção Sobre - um abaixo do outro */
     .about-content {
@@ -3420,7 +3450,9 @@ textarea:focus {
     }
 }
 
-/* Landscape para Mobile */
+/* ===== LANDSCAPE PARA MOBILE - NOVAS MEDIA QUERIES ADICIONADAS ===== */
+
+/* Landscape para Mobile (altura <= 600px e orientação paisagem) */
 @media (max-height: 600px) and (orientation: landscape) {
 
     .hero,
@@ -3434,61 +3466,585 @@ textarea:focus {
         height: 120vh;
     }
 
-    .specialty-card {
-        height: auto;
-        min-height: 280px;
-        width: 100%;
-        min-width: 100%;
-        box-sizing: border-box;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
+    .hero-content {
+        padding: 0 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
     }
 
     .nav-content {
-        padding: 5px 20px;
+        padding: 8px 25px;
         justify-content: flex-start;
         backdrop-filter: none;
+        width: 95%;
+    }
+
+    .logo img {
+        height: 70px;
     }
 
     .nav-menu,
     .nav-menu-blog {
-        padding: 2rem 0;
+        padding: 1.5rem 0;
     }
 
     .nav-menu a,
     .nav-menu-blog a {
-        padding: 0.6rem 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 1.1rem;
+        min-height: 45px;
+    }
+
+    /* Seção Sobre em Landscape */
+    .about {
+        padding: 60px 0;
+        min-height: auto;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .about-text h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+    }
+
+    /* Carrossel em Landscape */
+    .specialties {
+        padding: 50px 0;
+        min-height: auto;
+    }
+
+    .container-specialties {
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .section-header {
+        flex: 0 0 200px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .section-header p {
+        font-size: 1.2rem;
+    }
+
+    .carousel-container {
+        width: calc(100% - 230px);
+    }
+
+    .carousel-wrapper {
+        overflow-x: hidden;
+        scroll-snap-type: x mandatory;
+    }
+
+    .specialties-carousel {
+        display: flex;
+        gap: 15px;
+    }
+
+    .specialty-card {
+        min-width: 280px;
+        flex: 0 0 auto;
+        padding: 1.5rem;
+        min-height: 200px;
+        scroll-snap-align: start;
+    }
+
+    .specialty-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .specialty-card p {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+        display: none !important;
+    }
+
+    .carousel-dots {
+        display: none;
+        margin-top: 0.5rem;
+    }
+
+    /* Timeline em Landscape */
+    .testimonials {
+        padding: 15px 0;
+        margin-top: 20px;
+        min-height: auto;
+    }
+
+    .testimonials-title {
+        margin-bottom: 1.5rem;
+        margin-top: 0.5rem;
+        font-size: 1.8rem;
+    }
+
+    .horizontal-timeline {
+        max-width: 900px;
+        padding: 0 1rem;
+    }
+
+    .timeline-base {
+        top: 40px;
+        width: 100%;
+    }
+
+    .timeline-points {
+        gap: 30px;
+    }
+
+    .timeline-point-wrapper {
+        width: auto;
+    }
+
+    .timeline-point {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+
+    .point-number {
         font-size: 1.1rem;
     }
 
-    /* Ajustes Timeline Landscape */
-    .testimonials {
-        padding: 5px 0;
+    .point-card {
+        min-width: 130px;
+        padding: 0.8rem;
     }
-    
-    .testimonials-title {
+
+    .point-card h4 {
+        font-size: 0.9rem;
+    }
+
+    .point-card p {
+        font-size: 0.75rem;
+    }
+
+    .point-card small {
+        font-size: 0.65rem;
+    }
+
+    /* Artigos em Landscape */
+    .articles {
+        height: auto;
+        min-height: 140vh;
+        padding: 40px 0;
+        margin-top: 40px;
+    }
+
+    .articles h2 {
+        margin-top: 40px;
+    }
+
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .article-card {
+        min-height: 300px;
+    }
+
+    .article-content {
+        padding: 1.5rem;
+    }
+
+    .article-content h3 {
+        font-size: 1.1rem;
+        min-height: 50px;
+    }
+
+    .article-content p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+
+    .read-more {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* Localização em Landscape */
+    .location-section {
+        padding: 30px 0;
+    }
+
+    .location-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .info-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+    }
+
+    .info-card h3 {
+        font-size: 1.2rem;
         margin-bottom: 0.8rem;
-        margin-top: 0.3rem;
     }
-    
-    .timeline-base {
-        top: 35px;
+
+    .info-address {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
     }
-    
-    .timeline-point {
-        margin-bottom: 10px;
+
+    .info-features span {
+        font-size: 0.85rem;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+
+    /* Formulário em Landscape */
+    .contact-form-section {
+        padding: 50px 0;
+    }
+
+    .contact-form-wrapper {
+        padding: 2rem;
+    }
+
+    .form-intro h2 {
+        font-size: 1.8rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.8rem 1.2rem;
+    }
+
+    .submit-btn {
+        padding: 1rem 1.5rem;
+    }
+
+    /* Ajuda Legal em Landscape */
+    .help {
+        padding: 50px 0;
+        min-height: 40vh;
+    }
+
+    .help h2 {
+        font-size: 2rem;
+    }
+
+    .help h4 {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-button.large {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.1rem;
+    }
+
+    /* Footer em Landscape */
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    .footer-logo img {
+        max-width: 180px;
+    }
+
+    .footer-logo p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-social a {
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer-column h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-links li {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+
+    .footer-contacts li {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+    }
+
+    /* WhatsApp flutuante em Landscape */
+    .whatsapp-float {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .whatsapp-float a {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
     }
 }
 
-/* Ajustes para telas muito grandes */
-@media (min-width: 1200px) {
+/* Landscape para Mobile Médio (altura entre 601px e 800px) */
+@media (min-height: 601px) and (max-height: 800px) and (orientation: landscape) {
+
+    .hero,
+    .hero-blog {
+        min-height: 120vh;
+    }
+
+    .hero::before,
+    .hero-blog::before {
+        height: 120vh;
+    }
+
+    .specialty-card {
+        min-height: 220px;
+    }
+
+    .articles {
+        min-height: 130vh;
+    }
+
+    .articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Landscape para Mobile Grande (altura entre 801px e 900px) */
+@media (min-height: 801px) and (max-height: 900px) and (orientation: landscape) {
+
+    .hero,
+    .hero-blog {
+        min-height: 120vh;
+    }
+
+    .hero::before,
+    .hero-blog::before {
+        height: 120vh;
+    }
+}
+
+/* Landscape para Telas Muito Pequenas (altura <= 400px) */
+@media (max-height: 400px) and (orientation: landscape) {
+
+    .hero,
+    .hero-blog {
+        min-height: 140vh;
+        padding: 80px 0 30px;
+    }
+
+    .hero::before,
+    .hero-blog::before {
+        height: 145vh;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1rem;
+    }
+
+    .logo img {
+        height: 55px;
+    }
+
+    .nav-content {
+        padding: 5px 20px;
+    }
+
+    .nav-menu a,
+    .nav-menu-blog a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .specialty-card {
+        min-width: 240px;
+        padding: 1.2rem;
+        min-height: 180px;
+    }
+
+    .specialty-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .specialty-card p {
+        font-size: 0.8rem;
+    }
+
+    .timeline-point {
+        width: 45px;
+        height: 45px;
+    }
+
+    .point-card {
+        min-width: 110px;
+        padding: 0.6rem;
+    }
+
+    .articles {
+        min-height: 160vh;
+    }
+
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .article-content {
+        padding: 1.2rem;
+    }
+
+    .article-content h3 {
+        font-size: 1rem;
+        min-height: 40px;
+    }
+
+    .map-container {
+        height: 250px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-logo img {
+        max-width: 150px;
+    }
+}
+
+/* Landscape com Orientação Específica para Dispositivos Dobráveis */
+@media (max-height: 600px) and (orientation: landscape) and (min-width: 800px) {
+
+    .container-specialties {
+        flex-direction: row;
+    }
+
+    .specialties-carousel {
+        gap: 20px;
+    }
+
+    .specialty-card {
+        min-width: 260px;
+    }
+}
+
+/* Correções para garantir que o conteúdo não fique cortado em Landscape */
+@media (orientation: landscape) and (max-height: 700px) {
+    section {
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    .hero,
+    .hero-blog {
+        min-height: 120vh;
+    }
+
+    .hero::before,
+    .hero-blog::before {
+        height: 130vh;
+    }
+
+    .hero-content {
+        margin-top: 20px;
+    }
+
+    .about {
+        min-height: auto;
+    }
+
+    .specialties {
+        min-height: auto;
+    }
+
+    .testimonials {
+        min-height: auto;
+    }
+
+    .articles {
+        min-height: auto;
+    }
+
+    .location-section {
+        min-height: auto;
+    }
+
+    .contact-form-section {
+        min-height: auto;
+    }
+
+    .help {
+        min-height: 40vh;
+    }
+
+    .footer {
+        min-height: auto;
+    }
+}
+
+/* Ajustes para tablets em landscape */
+@media (min-width: 1025px) and (orientation: landscape) {
     .container {
         max-width: 1400px;
     }
-    .articles{
+
+    .articles {
         height: 130vh;
     }
-    
 }
 
 /* Correções de orientação */
