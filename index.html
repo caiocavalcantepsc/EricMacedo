@@ -107,9 +107,9 @@
             </div>
 
             <div class="carousel-container">
-                    <button class="carousel-btn prev-btn" aria-label="Anterior" id="btn-left-horizontal">
-                        <i class="fas fa-chevron-left" ></i>
-                    </button>
+                <button class="carousel-btn prev-btn" aria-label="Anterior" id="btn-left-horizontal">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
 
                 <div class="carousel-wrapper">
                     <div class="specialties-carousel">
@@ -135,7 +135,8 @@
 
                         <!-- Card 2: Defesa Ética Profissional -->
                         <div class="specialty-card" id="spe-card-2">
-                            <a href="blog.html#defesa-etica-profissional" aria-label="Saiba mais sobre Defesa Ética Profissional"></a>
+                            <a href="blog.html#defesa-etica-profissional"
+                                aria-label="Saiba mais sobre Defesa Ética Profissional"></a>
 
                             <div class="speciality-text">
                                 <h3>Defesa Ética Profissional</h3>
@@ -153,7 +154,8 @@
 
                         <!-- Card 3: Direito Odontológico -->
                         <div class="specialty-card" id="spe-card-3">
-                            <a href="blog.html#direito-odontologic" aria-label="Saiba mais sobre Direito Odontológico"></a>
+                            <a href="blog.html#direito-odontologic"
+                                aria-label="Saiba mais sobre Direito Odontológico"></a>
 
                             <div class="speciality-text">
                                 <h3>Direito Odontológico</h3>
@@ -225,14 +227,14 @@
                 </div>
                 <span class="botoes">
                     <button class="carousel-btn prev-btn" aria-label="Anterior" id="btn-left">
-                        <i class="fas fa-chevron-left" ></i>
+                        <i class="fas fa-chevron-left"></i>
                     </button>
 
                     <button class="carousel-btn next-btn" aria-label="Próximo">
-                        <i class="fas fa-chevron-right" ></i>
+                        <i class="fas fa-chevron-right"></i>
                     </button>
                 </span>
-                
+
             </div>
 
             <div class="carousel-dots">
@@ -249,42 +251,79 @@
         </div>
     </section>
 
-    <!-- Testemunhos -->
-    <section class="testimonials" id="servicos">
-        <div class="container">
-            <h2 class="testimonials-title hidden">O que dizem nossos clientes</h2>
-            <div class="testimonials-grid hidden-blurless">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "Dr. Eric resolveu meu processo de forma eficiente..."
-                    </div>
-                    <div class="testimonial-author">
-                        <strong>Nome do cliente</strong>
-                        <span>Profissão do cliente - xxx/xxx</span>
-                    </div>
-                </div>
+    <!-- Linha do Tempo Horizontal (substituindo Testemunhos) -->
+    <section class="testimonials" id="processo">
+        <!-- <div class="container"> -->
+            <h2 class="testimonials-title centralizador hidden">Como funciona nosso atendimento</h2>
 
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "Dr. Eric resolveu meu processo de forma eficiente..."
-                    </div>
-                    <div class="testimonial-author">
-                        <strong>Nome do cliente</strong>
-                        <span>Profissão do cliente - xxx/xxx</span>
-                    </div>
-                </div>
+            <div class="horizontal-timeline hidden-blurless">
+                <!-- Linha base -->
+                <div class="timeline-base"></div>
 
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "Dr. Eric resolveu meu processo de forma eficiente..."
+                <!-- Pontos e Cards -->
+                <div class="timeline-points">
+                    <!-- Ponto 1 -->
+                    <div class="timeline-point-wrapper">
+                        <div class="timeline-point">
+                            <span class="point-number">I</span>
+                        </div>
+                        <div class="point-card">
+                            <h4>Contato</h4>
+                            <p>WhatsApp ou formulário</p>
+                            <small>Resposta em 24h</small>
+                        </div>
                     </div>
-                    <div class="testimonial-author">
-                        <strong>Nome do cliente</strong>
-                        <span>Profissão do cliente - xxx/xxx</span>
+
+                    <!-- Ponto 2 -->
+                    <div class="timeline-point-wrapper">
+                        <div class="timeline-point">
+                            <span class="point-number">II</span>
+                        </div>
+                        <div class="point-card">
+                            <h4>Análise</h4>
+                            <p>Avaliação da documentação</p>
+                            <small>Estratégia definida</small>
+                        </div>
+                    </div>
+
+                    <!-- Ponto 3 -->
+                    <div class="timeline-point-wrapper">
+                        <div class="timeline-point">
+                            <span class="point-number">III</span>
+                        </div>
+                        <div class="point-card">
+                            <h4>Alinhamento</h4>
+                            <p>Reunião de estratégia</p>
+                            <small>Presencial ou online</small>
+                        </div>
+                    </div>
+
+                    <!-- Ponto 4 -->
+                    <div class="timeline-point-wrapper">
+                        <div class="timeline-point">
+                            <span class="point-number">IV</span>
+                        </div>
+                        <div class="point-card">
+                            <h4>Ação</h4>
+                            <p>Medidas judiciais</p>
+                            <small>Petições e recursos</small>
+                        </div>
+                    </div>
+
+                    <!-- Ponto 5 -->
+                    <div class="timeline-point-wrapper" id="sumir">
+                        <div class="timeline-point">
+                            <span class="point-number">V</span>
+                        </div>
+                        <div class="point-card">
+                            <h4>Acompanhamento</h4>
+                            <p>Suporte contínuo</p>
+                            <small>Atualizações periódicas</small>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
     </section>
 
     <section class="articles" id="blog">
