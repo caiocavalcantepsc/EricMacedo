@@ -551,17 +551,6 @@ h2 {
     transition: opacity var(--transition-base), transform var(--transition-base);
 }
 
-.botoes {
-    display: flex;
-    gap: 10px;
-}
-
-
-#btn-left {
-    display: none;
-}
-
-
 /* Ícone de seta que aparece no hover */
 .specialty-card .card-link-icon {
     position: absolute;
@@ -2036,18 +2025,6 @@ textarea:focus {
         display: none;
     }
 
-    #btn-left-horizontal {
-        display: none;
-    }
-
-    #btn-left {
-        display: flex;
-    }
-
-    #btn-right {
-        display: flex;
-    }
-
     .hero,
     .hero-blog {
         min-height: 90vh;
@@ -2314,22 +2291,6 @@ textarea:focus {
         height: 350px;
     }
 
-    #btn-left-horizontal {
-        display: none;
-    }
-
-    #btn-left {
-        display: none;
-    }
-
-    #btn-right {
-        display: none;
-    }
-
-    .botoes {
-        display: none;
-    }
-
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
@@ -2396,11 +2357,6 @@ textarea:focus {
     .cta-buttons a {
         width: 100%;
         justify-content: center;
-    }
-
-    .botoes {
-        display: flex;
-        gap: 10px;
     }
 
     /* Ajustes Timeline Tablet */
@@ -2495,22 +2451,6 @@ textarea:focus {
     .info-features {
         flex-direction: column;
         gap: 1rem;
-    }
-
-    #btn-left-horizontal {
-        display: none;
-    }
-
-    #btn-left {
-        display: none;
-    }
-
-    #btn-right {
-        display: none;
-    }
-
-    .botoes {
-        display: none;
     }
 
     .footer-grid {
@@ -2882,18 +2822,6 @@ textarea:focus {
     .info-features {
         flex-direction: column;
         gap: 1rem;
-    }
-
-    #btn-left-horizontal {
-        display: none;
-    }
-
-    #btn-left {
-        display: flex;
-    }
-
-    .botoes {
-        display: flex;
     }
 
     .footer-grid {
@@ -3278,10 +3206,6 @@ textarea:focus {
     }
 
     .carousel-btn {
-        display: none;
-    }
-
-    #btn-left, #btn-right {
         display: none;
     }
 
