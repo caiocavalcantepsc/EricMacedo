@@ -956,28 +956,24 @@ h2 {
     transform: translateY(-1px);
 }
 
-/* ===== ARTIGOS PREMIUM ===== */
+/* ===== ARTIGOS PREMIUM - CORRIGIDO ===== */
 .articles {
     background: var(--white);
     position: relative;
     background-image: url('Media/background\ articles\ com\ opacidade\ baixa.jpg');
     background-size: cover;
-    height: 130vh;
+    background-position: center;
+    background-attachment: scroll;
+    padding: 4rem 0;
     margin-top: 120px;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-/* .articles::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: cover !important;
-    background-color: rgba(0, 0, 0, 0);
-} */
-
 .articles h2 {
-    margin-top: 130px;
+    margin-top: 2rem;
     text-align: center;
     margin-bottom: 1.5rem;
     color: var(--gray-100);
@@ -993,8 +989,15 @@ h2 {
 .articles-grid {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr); /* SEMPRE 3 COLUNAS */
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    padding: 0 var(--container-padding);
+    flex: 1;
 }
 
 .article-card {
@@ -1983,9 +1986,9 @@ textarea:focus {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--secondary-color);
 }
+/* ===== MEDIA QUERIES OTIMIZADAS - VERSÃO FINAL FUNDIDA ===== */
 
-
-/* Tablet Landscape (1024px a 768px) */
+/* Tablet Landscape (1024px a 769px) */
 @media (max-width: 1024px) {
     :root {
         --section-spacing: 80px;
@@ -1998,33 +2001,26 @@ textarea:focus {
 
     .about-text {
         width: auto;
-        /* Removido width fixo */
     }
 
-    .about-text h2{
+    .about-text h2 {
         font-size: 1.3rem;
     }
 
-    .about-text p{
+    .about-text p {
         font-size: 0.8rem;
     }
 
     .about-image img {
         width: 100%;
-        /* Ajustado para responsividade */
         max-width: 500px;
-        /* Limite máximo */
     }
 
     .about-content {
         display: grid;
-        /* Mantém grid, não inline */
         grid-template-columns: 1fr 1fr;
-        /* Coloca lado a lado */
         gap: 3rem;
-        /* Espaçamento entre imagem e texto */
         align-items: center;
-        /* Alinha verticalmente */
     }
 
     .carousel-container {
@@ -2048,8 +2044,8 @@ textarea:focus {
         display: flex;
     }
 
-    #btn-right{
-        display: flex;  
+    #btn-right {
+        display: flex;
     }
 
     .hero,
@@ -2072,8 +2068,28 @@ textarea:focus {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    /* ARTICLES - 3 COLUNAS COM AJUSTES */
+
     .articles-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .article-card {
+        max-width: 100%;
+    }
+
+    .article-content {
+        padding: 1.8rem;
+    }
+
+    .article-content h3 {
+        font-size: 1.2rem;
+        min-height: 65px;
+    }
+
+    .article-content p {
+        font-size: 0.95rem;
     }
 
     .map-container {
@@ -2095,9 +2111,8 @@ textarea:focus {
         display: none;
         position: fixed;
         top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100vh;
+        width: 300px;
+        height: auto;
         background: var(--gradient-primary);
         flex-direction: column;
         align-items: center;
@@ -2106,12 +2121,22 @@ textarea:focus {
         transition: left var(--transition-base);
         z-index: 1000;
         padding: 2rem;
+        border-radius: 10px;
     }
 
-    .nav-menu.active,
+    .main-nav{
+        display: flex;
+        align-items:right;
+    }
+
+    .nav-menu.active{
+        left: 0;
+        display: flex;
+    }
     .nav-menu-blog.active {
         left: 0;
         display: flex;
+        width: 100%;
     }
 
     .nav-menu a,
@@ -2139,29 +2164,18 @@ textarea:focus {
     .timeline-points {
         gap: 40px;
     }
-    
+
     .timeline-point-wrapper {
         width: 90px;
     }
-    
+
     .point-card {
         min-width: 150px;
     }
 }
 
-@media (max-height: 1024px){
-    .articles{
-        height: 145vh;  
-    }
-
-    .horizontal-timeline{
-        overflow-x:hidden;
-    }
-}
-
-/* Tablet Portrait (768px a 576px) */
+/* Tablet Portrait (768px a 577px) */
 @media (max-width: 768px) {
-
     .hero,
     .hero-blog {
         min-height: 100vh;
@@ -2231,9 +2245,7 @@ textarea:focus {
         transform: rotate(90deg);
     }
 
-    .specialties-grid,
-    .articles-grid,
-    .testimonials-grid {
+    .specialties-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
@@ -2241,7 +2253,7 @@ textarea:focus {
     .specialty-card {
         min-height: 110px;
         padding: 0.5rem;
-        width: 10px;
+        width: 100%;
     }
 
     .specialty-icon {
@@ -2250,6 +2262,52 @@ textarea:focus {
 
     .speciality-text h3 {
         margin-top: 20px;
+    }
+
+    /* ARTICLES - 3 COLUNAS COM AJUSTES */
+    .articles-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+    }
+
+    .article-card {
+        max-width: 100%;
+    }
+
+    .article-content {
+        padding: 1.5rem;
+    }
+
+    .article-content h3 {
+        font-size: 1.1rem;
+        min-height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    .article-content p {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .article-meta {
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .article-year, .article-type {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .read-more {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .map-container {
@@ -2262,6 +2320,10 @@ textarea:focus {
 
     #btn-left {
         display: none;
+    }
+
+    #btn-right {
+        display: flex;
     }
 
     .botoes {
@@ -2346,41 +2408,39 @@ textarea:focus {
         padding: 15px 0;
         margin-top: 30px;
     }
-    
+
     .testimonials-title {
         margin-bottom: 2rem;
         margin-top: 1.5rem;
         font-size: 1.8rem;
     }
-    
+
     .horizontal-timeline {
         overflow-x: hidden;
-        /* padding: 0.5rem 0.5rem 0; */
         -webkit-overflow-scrolling: touch;
     }
-    
+
     .timeline-base {
         top: 40px;
-        width: 650px;
+        width: 100%;
     }
-    
+
     .timeline-points {
-        width: 700px;
+        width: 100%;
         gap: 30px;
     }
-    
+
     .timeline-point {
         margin-bottom: 20px;
     }
-    
+
     .point-card {
         min-width: 120px;
     }
 }
 
-/* Mobile (576px a 529px) - Ainda horizontal com scroll */
-@media (max-width: 576px) and (min-width: 529px) {
-
+/* Mobile Médio (576px a 481px) */
+@media (max-width: 576px) {
     .hero,
     .hero-blog {
         min-height: 100vh;
@@ -2420,12 +2480,6 @@ textarea:focus {
         height: 80px;
     }
 
-    .specialty-card,
-    .article-card,
-    .testimonial-card {
-        padding: 0.8rem;
-    }
-
     .specialty-card {
         height: auto;
         min-height: 110px;
@@ -2448,6 +2502,10 @@ textarea:focus {
     }
 
     #btn-left {
+        display: flex;
+    }
+
+    #btn-right {
         display: flex;
     }
 
@@ -2494,7 +2552,7 @@ textarea:focus {
         height: 30px;
     }
 
-    /* Carrossel Mobile - CORRIGIDO */
+    /* Carrossel Mobile */
     .specialties {
         padding: calc(var(--section-spacing) / 1.5) 0;
         min-height: auto;
@@ -2631,7 +2689,7 @@ textarea:focus {
         height: 50px;
     }
 
-    /* Seção Sobre - um abaixo do outro (576px) */
+    /* Seção Sobre - vertical */
     .about-content {
         display: flex;
         flex-direction: column;
@@ -2662,18 +2720,52 @@ textarea:focus {
         line-height: 1.6;
     }
 
+    /* ARTICLES - 3 COLUNAS COM AJUSTES */
     .articles {
-        height: 215vh;
+        min-height: 100vh;
+        height: auto;
+        padding: 2.5rem 0;
         background: linear-gradient(45deg, black, gray);
-        padding: 2rem 1rem;
     }
-
-    /* .articles::before {
-        height: 250vh;
-    } */
 
     .articles h2 {
         margin-top: 20px;
+    }
+
+    .articles-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+
+    .article-content {
+        padding: 1rem;
+    }
+
+    .article-content h3 {
+        font-size: 0.95rem;
+        min-height: 50px;
+        margin-bottom: 0.6rem;
+    }
+
+    .article-content p {
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .article-meta {
+        gap: 0.4rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .article-year, .article-type {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.5rem;
+    }
+
+    .read-more {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
     }
 
     .contact-form-wrapper {
@@ -2688,54 +2780,53 @@ textarea:focus {
         text-align: left;
     }
 
-    /* Ajustes Timeline Mobile */
+    /* Timeline */
     .testimonials {
         padding: 10px 0;
         margin-top: 20px;
     }
-    
+
     .testimonials-title {
         margin-bottom: 1.5rem;
         margin-top: 1rem;
         font-size: 1.6rem;
     }
-    
+
     .timeline-base {
         top: 38px;
-        width: 600px;
+        width: 100%;
     }
-    
+
     .timeline-points {
-        width: 600px;
+        width: 100%;
         gap: 20px;
     }
-    
+
     .timeline-point {
         margin-bottom: 15px;
     }
-    
+
     .point-card {
         min-width: 110px;
         padding: 0.8rem;
     }
-    
+
     .point-card h4 {
         font-size: 0.9rem;
     }
-    
+
     .point-card p {
         font-size: 0.75rem;
     }
-    
+
     .point-card small {
         font-size: 0.65rem;
         padding: 0.15rem 0.4rem;
     }
 }
 
-/* Mobile (até 528px) - TIMELINE VERTICAL COM LINHA */
+/* Mobile Pequeno (até 528px) - Timeline Vertical */
 @media (max-width: 528px) {
-
     .hero,
     .hero-blog {
         min-height: 100vh;
@@ -2773,12 +2864,6 @@ textarea:focus {
 
     .logo img {
         height: 80px;
-    }
-
-    .specialty-card,
-    .article-card,
-    .testimonial-card {
-        padding: 0.8rem;
     }
 
     .specialty-card {
@@ -2849,7 +2934,7 @@ textarea:focus {
         height: 30px;
     }
 
-    /* Carrossel Mobile - CORRIGIDO */
+    /* Carrossel Mobile */
     .specialties {
         padding: calc(var(--section-spacing) / 1.5) 0;
         min-height: auto;
@@ -2986,7 +3071,7 @@ textarea:focus {
         height: 50px;
     }
 
-    /* Seção Sobre - um abaixo do outro (576px) */
+    /* Seção Sobre */
     .about-content {
         display: flex;
         flex-direction: column;
@@ -3017,17 +3102,53 @@ textarea:focus {
         line-height: 1.6;
     }
 
+    /* ARTICLES - 3 COLUNAS COM AJUSTES */
     .articles {
-        height: 170vh;
-        padding: 2rem 1rem;
+        min-height: 100vh;
+        height: auto;
+        padding: 2rem 0;
     }
-
-    /* .articles::before {
-        height: 170vh;
-    } */
 
     .articles h2 {
         margin-top: 20px;
+    }
+
+    .articles-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0.8rem;
+    }
+
+    .article-content {
+        padding: 0.8rem;
+    }
+
+    .article-content h3 {
+        font-size: 0.9rem;
+        min-height: 45px;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .article-content p {
+        font-size: 0.75rem;
+        margin-bottom: 0.6rem;
+        line-height: 1.2;
+    }
+
+    .article-meta {
+        gap: 0.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .article-year, .article-type {
+        font-size: 0.6rem;
+        padding: 0.1rem 0.4rem;
+    }
+
+    .read-more {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.7rem;
+        gap: 0.3rem;
     }
 
     .contact-form-wrapper {
@@ -3042,25 +3163,24 @@ textarea:focus {
         text-align: left;
     }
 
-    /* TIMELINE VERTICAL COM LINHA para telas menores que 528px */
+    /* TIMELINE VERTICAL */
     .testimonials {
         padding: 20px 0;
         margin-top: 20px;
     }
-    
+
     .testimonials-title {
         margin-bottom: 2rem;
         margin-top: 1rem;
         font-size: 1.6rem;
     }
-    
+
     .horizontal-timeline {
         padding: 0;
         max-width: 100%;
         position: relative;
     }
-    
-    /* Cria uma linha vertical */
+
     .horizontal-timeline::before {
         content: '';
         position: absolute;
@@ -3074,11 +3194,11 @@ textarea:focus {
         opacity: 0.3;
         z-index: 1;
     }
-    
+
     .timeline-base {
-        display: none; /* Remove a linha horizontal */
+        display: none;
     }
-    
+
     .timeline-points {
         display: flex;
         flex-direction: column;
@@ -3088,7 +3208,7 @@ textarea:focus {
         position: relative;
         z-index: 2;
     }
-    
+
     .timeline-point-wrapper {
         width: 100%;
         max-width: 280px;
@@ -3096,26 +3216,25 @@ textarea:focus {
         position: relative;
         z-index: 3;
     }
-    
+
     .timeline-point {
         margin-bottom: 10px;
     }
-    
+
     .point-card {
         min-width: 100%;
         width: 100%;
         margin-top: 0;
         animation: bounce 4s ease-in-out infinite;
     }
-    
+
     .point-card::before {
         top: -8px;
         border-left: 8px solid transparent;
         border-right: 8px solid transparent;
         border-bottom: 8px solid var(--white);
     }
-    
-    /* Remove o delay da animação em mobile vertical */
+
     .timeline-point-wrapper:nth-child(1) .point-card,
     .timeline-point-wrapper:nth-child(2) .point-card,
     .timeline-point-wrapper:nth-child(3) .point-card,
@@ -3123,23 +3242,21 @@ textarea:focus {
     .timeline-point-wrapper:nth-child(5) .point-card {
         animation-delay: 0s;
     }
+
+    .timeline-point {
+        width: 50px;
+        height: 50px;
+    }
+
+    .point-number {
+        font-size: 1rem;
+    }
 }
 
-/* Mobile Pequeno (425px a 375px) */
+/* Mobile Extra Pequeno (até 425px) */
 @media (max-width: 425px) {
     :root {
         --container-padding: 0.8rem;
-    }
-
-    .hero,
-    .hero-blog {
-        min-height: 100vh;
-        padding: 70px 0 20px;
-    }
-
-    .hero::before,
-    .hero-blog::before {
-        height: 100vh;
     }
 
     .hero-content h1 {
@@ -3153,25 +3270,18 @@ textarea:focus {
     .nav-content {
         padding: 8px 12px;
         width: 98%;
-        justify-content: flex-start;
-        backdrop-filter: none;
-    }
-
-    .map-container {
-        height: 250px;
     }
 
     .logo img {
         height: 65px;
     }
 
-    .specialty-card {
-        min-height: 110px;
-        padding: 2rem;
-        width: 100%;
-        min-width: 100%;
-        box-sizing: border-box;
-        
+    .carousel-btn {
+        display: none;
+    }
+
+    #btn-left, #btn-right {
+        display: none;
     }
 
     .whatsapp-float a {
@@ -3185,276 +3295,168 @@ textarea:focus {
         font-size: 1rem;
     }
 
-    .badge-item {
-        padding: 0.8rem 1rem;
-        font-size: 0.9rem;
+    /* ARTICLES */
+    .articles {
+        padding: 1.5rem 0;
     }
 
-    /* Blog Mobile Pequeno */
-    .blog-header h1 {
-        font-size: 1.8rem;
+    .articles-grid {
+        gap: 0.6rem;
     }
 
-    .accordion-header {
-        padding: 16px;
-        font-size: 1.1rem;
+    .article-content {
+        padding: 0.6rem;
     }
 
-    .specialty-card {
-        min-height: 110px;
-        padding: 2rem;
-        width: 100%;
-        min-width: 100%;
-        box-sizing: border-box;
-
+    .article-content h3 {
+        font-size: 0.85rem;
+        min-height: 40px;
+        margin-bottom: 0.4rem;
     }
 
-    .specialty-content h4 {
-        font-size: 1.1rem;
+    .article-content p {
+        font-size: 0.7rem;
+        margin-bottom: 0.5rem;
     }
 
-    
-    .carousel-container {
-        display: grid;
-        margin-top: 50px;
+    .article-meta {
+        gap: 0.2rem;
+        margin-bottom: 0.4rem;
     }
 
-    .specialty-card {
-        min-width: 300px;
+    .article-year, .article-type {
+        font-size: 0.55rem;
+        padding: 0.1rem 0.3rem;
     }
 
-    .carousel-dots {
-        display: none;
+    .read-more {
+        padding: 0.25rem 0.4rem;
+        font-size: 0.65rem;
     }
 
-    .carousel-btn{
-        display: none;
-    }
-
-    #btn-left-horizontal {
-        display: none;
-    }
-
-    #btn-left {
-        display: none;
-    }
-
-    #btn-right{
-        display: none;  
-    }
-
-    
-    /* #btn-left-horizontal {
-        display: none;
-    }
-
-    #btn-left {
-        display: none;
-    }
-
-    .botoes {
-        display: none;
-    } */
-
-    /* Seção Sobre - um abaixo do outro */
-    .about-content {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .about-image {
-        text-align: center;
-    }
-
-    .about-image img {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .about-text {
-        width: 100%;
-    }
-
-    .about-text h2 {
-        text-align: center;
-        margin-bottom: 1.5rem;
-    }
-
-    .about-text p {
-        text-align: justify;
-        line-height: 1.6;
-    }
-
-    /* Ajustes Timeline Vertical Mobile Pequeno */
     .testimonials-title {
         font-size: 1.4rem;
     }
-    
+
     .timeline-point-wrapper {
         max-width: 260px;
     }
-    
-    .timeline-point {
-        width: 55px;
-        height: 55px;
-    }
-    
-    .point-number {
-        font-size: 1.1rem;
-    }
-    
+
     .point-card {
         padding: 0.8rem;
     }
-
-
-    .articles{
-        height: 230vh;
-    }
-
-    /* .articles::before{
-        height: 240vh;    } */
 }
 
 /* Mobile Muito Pequeno (até 375px) */
 @media (max-width: 376px) {
-
-    .hero,
-    .hero-blog {
-        min-height: 100vh;
-    }
-
-    .hero::before,
-    .hero-blog::before {
-        height: 100vh;
-    }
-
     .hero-content h1 {
         font-size: 1.6rem;
     }
 
     .nav-content {
         padding: 6px 10px;
-        justify-content: flex-start;
-        backdrop-filter: none;
     }
 
     .specialty-card {
         min-height: 100px;
         padding: 1.5rem;
-        width: 100%;
-        min-width: 100%;
-        box-sizing: border-box;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
     }
 
-    /* Ajustes Timeline Vertical Mobile Muito Pequeno */
     .testimonials-title {
         font-size: 1.3rem;
         padding: 20px;
     }
-    
+
     .timeline-point-wrapper {
         max-width: 240px;
     }
-    
-    .timeline-point {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 30px;
-    }
-    
-    .point-number {
-        font-size: 1rem;
-    }
-    
+
     .point-card {
         padding: 0.7rem;
     }
-    
+
     .point-card h4 {
         font-size: 0.9rem;
     }
-    
+
     .point-card p {
         font-size: 0.75rem;
     }
-    
+
     .point-card small {
         font-size: 0.65rem;
     }
 
-    .articles{
-        height: 250vh;
+    /* ARTICLES */
+    .articles-grid {
+        gap: 0.5rem;
     }
 
-    /* .articles::before{
-        height: 250vh;
-    } */
-
-}
-
-@media (max-height: 882px){
-    .articles{
-        height: 275vh;
+    .article-content {
+        padding: 0.5rem;
     }
 
-    /* .articles::before{
-        height: 275vh;    } */
-
-    .article-grid{
-        padding: 0;
-    }
-}
-
-@media (max-height: 667px){
-    .articles{
-        height: 245vh;
+    .article-content h3 {
+        font-size: 0.8rem;
+        min-height: 35px;
     }
 
-    /* .articles::before{
-        height: 245vh;    } */
+    .article-content p {
+        font-size: 0.65rem;
+    }
 
-    .article-grid{
-        padding: 0;
+    .read-more {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.3rem;
     }
 }
 
-
-@media (max-height: 990px){
-    .articles{
-        height: 325vh;
+/* Media Queries de Altura */
+@media (max-height: 1024px) {
+    .articles {
+        min-height: 100vh;
+        height: auto;
     }
-
-    /* .articles::before{
-        height: 325vh;    } */
-
-    .article-grid{
-        padding: 0;
+    .horizontal-timeline {
+        overflow-x: hidden;
+        padding: 10px 100px ;
     }
 }
 
-@media (max-height: 915px){
-    .articles{
-        height: 215vh;
-    }
-
-    /* .articles::before{
-        height: 325vh;    } */
-
-    .article-grid{
-        padding: 0;
+@media (max-height: 990px) {
+    .articles {
+        min-height: 100vh;
+        height: auto;
     }
 }
 
-/* ===== LANDSCAPE PARA MOBILE - NOVAS MEDIA QUERIES ADICIONADAS ===== */
+@media (max-height: 915px) {
+    .articles {
+        min-height: 80vh;
+        height: auto;
+    }
+}
 
-/* Landscape para Mobile (altura <= 600px e orientação paisagem) */
+@media (max-height: 882px) {
+    .articles {
+        min-height: 100vh;
+        height: auto;
+    }
+}
+
+@media (max-height: 667px) {
+    .articles {
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .article-card{
+        height: 100%;
+    }
+}
+
+/* Landscape Media Queries */
 @media (max-height: 600px) and (orientation: landscape) {
-
     .hero,
     .hero-blog {
         min-height: 120vh;
@@ -3491,11 +3493,6 @@ textarea:focus {
         height: 70px;
     }
 
-    .nav-menu,
-    .nav-menu-blog {
-        padding: 1.5rem 0;
-    }
-
     .nav-menu a,
     .nav-menu-blog a {
         padding: 0.5rem 1rem;
@@ -3503,7 +3500,6 @@ textarea:focus {
         min-height: 45px;
     }
 
-    /* Seção Sobre em Landscape */
     .about {
         padding: 60px 0;
         min-height: auto;
@@ -3530,7 +3526,6 @@ textarea:focus {
         line-height: 1.5;
     }
 
-    /* Carrossel em Landscape */
     .specialties {
         padding: 50px 0;
         min-height: auto;
@@ -3600,7 +3595,6 @@ textarea:focus {
         margin-top: 0.5rem;
     }
 
-    /* Timeline em Landscape */
     .testimonials {
         padding: 15px 0;
         margin-top: 20px;
@@ -3658,11 +3652,11 @@ textarea:focus {
         font-size: 0.65rem;
     }
 
-    /* Artigos em Landscape */
+    /* ARTICLES EM LANDSCAPE */
     .articles {
+        min-height: 100vh;
         height: auto;
-        min-height: 140vh;
-        padding: 40px 0;
+        padding: 2rem 0;
         margin-top: 40px;
     }
 
@@ -3671,35 +3665,33 @@ textarea:focus {
     }
 
     .articles-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
     }
 
     .article-card {
-        min-height: 300px;
+        min-height: 280px;
     }
 
     .article-content {
-        padding: 1.5rem;
+        padding: 1.2rem;
     }
 
     .article-content h3 {
-        font-size: 1.1rem;
-        min-height: 50px;
+        font-size: 1rem;
+        min-height: 45px;
     }
 
     .article-content p {
-        font-size: 0.85rem;
-        margin-bottom: 1rem;
-        line-height: 1.4;
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
     }
 
     .read-more {
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
 
-    /* Localização em Landscape */
     .location-section {
         padding: 30px 0;
     }
@@ -3724,20 +3716,10 @@ textarea:focus {
         margin-bottom: 0.8rem;
     }
 
-    .info-address {
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-    }
-
-    .info-features span {
-        font-size: 0.85rem;
-    }
-
     .map-container {
         height: 300px;
     }
 
-    /* Formulário em Landscape */
     .contact-form-section {
         padding: 50px 0;
     }
@@ -3746,21 +3728,6 @@ textarea:focus {
         padding: 2rem;
     }
 
-    .form-intro h2 {
-        font-size: 1.8rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 0.8rem 1.2rem;
-    }
-
-    .submit-btn {
-        padding: 1rem 1.5rem;
-    }
-
-    /* Ajuda Legal em Landscape */
     .help {
         padding: 50px 0;
         min-height: 40vh;
@@ -3775,12 +3742,6 @@ textarea:focus {
         margin-bottom: 2rem;
     }
 
-    .cta-button.large {
-        padding: 1.2rem 2.5rem;
-        font-size: 1.1rem;
-    }
-
-    /* Footer em Landscape */
     .footer {
         padding: 3rem 0 1.5rem;
     }
@@ -3804,25 +3765,6 @@ textarea:focus {
         height: 35px;
     }
 
-    .footer-column h3 {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-    }
-
-    .footer-links li {
-        margin-bottom: 0.5rem;
-    }
-
-    .footer-links a {
-        font-size: 0.85rem;
-    }
-
-    .footer-contacts li {
-        font-size: 0.85rem;
-        margin-bottom: 0.8rem;
-    }
-
-    /* WhatsApp flutuante em Landscape */
     .whatsapp-float {
         bottom: 1rem;
         right: 1rem;
@@ -3835,49 +3777,8 @@ textarea:focus {
     }
 }
 
-/* Landscape para Mobile Médio (altura entre 601px e 800px) */
-@media (min-height: 601px) and (max-height: 800px) and (orientation: landscape) {
-
-    .hero,
-    .hero-blog {
-        min-height: 120vh;
-    }
-
-    .hero::before,
-    .hero-blog::before {
-        height: 120vh;
-    }
-
-    .specialty-card {
-        min-height: 220px;
-    }
-
-    .articles {
-        min-height: 130vh;
-    }
-
-    .articles-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Landscape para Mobile Grande (altura entre 801px e 900px) */
-@media (min-height: 801px) and (max-height: 900px) and (orientation: landscape) {
-
-    .hero,
-    .hero-blog {
-        min-height: 120vh;
-    }
-
-    .hero::before,
-    .hero-blog::before {
-        height: 120vh;
-    }
-}
-
-/* Landscape para Telas Muito Pequenas (altura <= 400px) */
+/* Landscape para telas muito pequenas */
 @media (max-height: 400px) and (orientation: landscape) {
-
     .hero,
     .hero-blog {
         min-height: 140vh;
@@ -3917,14 +3818,6 @@ textarea:focus {
         min-height: 180px;
     }
 
-    .specialty-card h3 {
-        font-size: 1.1rem;
-    }
-
-    .specialty-card p {
-        font-size: 0.8rem;
-    }
-
     .timeline-point {
         width: 45px;
         height: 45px;
@@ -3935,22 +3828,29 @@ textarea:focus {
         padding: 0.6rem;
     }
 
+    /* ARTICLES */
     .articles {
         min-height: 160vh;
+        padding: 1.5rem 0;
     }
 
     .articles-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
     }
 
     .article-content {
-        padding: 1.2rem;
+        padding: 1rem;
     }
 
     .article-content h3 {
-        font-size: 1rem;
-        min-height: 40px;
+        font-size: 0.9rem;
+        min-height: 35px;
+    }
+
+    .article-content p {
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
     }
 
     .map-container {
@@ -3966,76 +3866,6 @@ textarea:focus {
     }
 }
 
-/* Landscape com Orientação Específica para Dispositivos Dobráveis */
-@media (max-height: 600px) and (orientation: landscape) and (min-width: 800px) {
-
-    .container-specialties {
-        flex-direction: row;
-    }
-
-    .specialties-carousel {
-        gap: 20px;
-    }
-
-    .specialty-card {
-        min-width: 260px;
-    }
-}
-
-/* Correções para garantir que o conteúdo não fique cortado em Landscape */
-@media (orientation: landscape) and (max-height: 700px) {
-    section {
-        min-height: auto;
-        padding: 40px 0;
-    }
-
-    .hero,
-    .hero-blog {
-        min-height: 120vh;
-    }
-
-    .hero::before,
-    .hero-blog::before {
-        height: 130vh;
-    }
-
-    .hero-content {
-        margin-top: 20px;
-    }
-
-    .about {
-        min-height: auto;
-    }
-
-    .specialties {
-        min-height: auto;
-    }
-
-    .testimonials {
-        min-height: auto;
-    }
-
-    .articles {
-        min-height: auto;
-    }
-
-    .location-section {
-        min-height: auto;
-    }
-
-    .contact-form-section {
-        min-height: auto;
-    }
-
-    .help {
-        min-height: 40vh;
-    }
-
-    .footer {
-        min-height: auto;
-    }
-}
-
 /* Ajustes para tablets em landscape */
 @media (min-width: 1025px) and (orientation: landscape) {
     .container {
@@ -4043,13 +3873,13 @@ textarea:focus {
     }
 
     .articles {
-        height: 130vh;
+        min-height: 100vh;
+        height: auto;
     }
 }
 
 /* Correções de orientação */
 @media (orientation: portrait) {
-
     .hero,
     .hero-blog,
     .specialties {
