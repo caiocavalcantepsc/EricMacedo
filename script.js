@@ -596,68 +596,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ===== 12. COOKIE CONSENT SIMPLIFICADO =====
-    if (!localStorage.getItem('cookiesAccepted')) {
-        setTimeout(() => {
-            const cookieBanner = document.createElement('div');
-            cookieBanner.className = 'cookie-banner';
-            cookieBanner.innerHTML = `
-                <div class="cookie-content">
-                    <p>Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="/politica-privacidade">Política de Privacidade</a>.</p>
-                    <button class="cookie-accept">Aceitar</button>
-                </div>
-            `;
-
-            cookieBanner.style.cssText = `
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: var(--gradient-primary);
-                color: white;
-                padding: 1rem;
-                z-index: 9999;
-                transform: translateY(100%);
-                transition: transform 0.3s ease;
-            `;
-
-            cookieBanner.querySelector('.cookie-content').style.cssText = `
-                max-width: 1200px;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 1rem;
-                flex-wrap: wrap;
-            `;
-
-            cookieBanner.querySelector('.cookie-accept').style.cssText = `
-                background: white;
-                color: var(--primary-color);
-                border: none;
-                padding: 0.5rem 1.5rem;
-                border-radius: 4px;
-                cursor: pointer;
-                font-weight: 600;
-                transition: transform 0.2s;
-            `;
-
-            document.body.appendChild(cookieBanner);
-
-            setTimeout(() => {
-                cookieBanner.style.transform = 'translateY(0)';
-            }, 1000);
-
-            document.querySelector('.cookie-accept').addEventListener('click', () => {
-                localStorage.setItem('cookiesAccepted', 'true');
-                cookieBanner.style.transform = 'translateY(100%)';
-                setTimeout(() => {
-                    cookieBanner.remove();
-                }, 300);
-            });
-        }, 2000);
-    }
-
     // ===== 13. ANIMAÇÃO DO TIMELINE PROGRESS =====
     const timelineProgress = document.querySelector('.timeline-progress');
     if (timelineProgress) {
