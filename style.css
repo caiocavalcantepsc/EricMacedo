@@ -2323,11 +2323,11 @@ textarea:focus {
     }
 
     #btn-right {
-        display: flex;
+        display: none;
     }
 
     .botoes {
-        display: flex;
+        display: none;
     }
 
     .footer-grid {
@@ -2502,15 +2502,15 @@ textarea:focus {
     }
 
     #btn-left {
-        display: flex;
+        display: none;
     }
 
     #btn-right {
-        display: flex;
+        display: none;
     }
 
     .botoes {
-        display: flex;
+        display: none;
     }
 
     .footer-grid {
@@ -2799,17 +2799,18 @@ textarea:focus {
 
     .timeline-points {
         width: 100%;
-        gap: 20px;
+        height: auto;
+        gap: 10px;
     }
 
     .timeline-point {
         margin-bottom: 15px;
     }
 
-    .point-card {
+    /* .point-card {
         min-width: 110px;
         padding: 0.8rem;
-    }
+    } */
 
     .point-card h4 {
         font-size: 0.9rem;
@@ -2819,10 +2820,10 @@ textarea:focus {
         font-size: 0.75rem;
     }
 
-    .point-card small {
+    /* .point-card small {
         font-size: 0.65rem;
         padding: 0.15rem 0.4rem;
-    }
+    } */
 }
 
 /* Mobile Pequeno (até 528px) - Timeline Vertical */
@@ -3419,7 +3420,7 @@ textarea:focus {
     }
     .horizontal-timeline {
         overflow-x: hidden;
-        padding: 10px 100px ;
+        padding: 10px ;
     }
 }
 
@@ -3608,8 +3609,7 @@ textarea:focus {
     }
 
     .horizontal-timeline {
-        max-width: 900px;
-        padding: 0 1rem;
+        max-width: 100%;
     }
 
     .timeline-base {
@@ -3618,7 +3618,7 @@ textarea:focus {
     }
 
     .timeline-points {
-        gap: 30px;
+        gap: 10px;
     }
 
     .timeline-point-wrapper {
