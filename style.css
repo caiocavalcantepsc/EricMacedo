@@ -3367,6 +3367,32 @@ textarea:focus {
         min-height: 100vh;
         height: auto;
     }
+
+    .about {
+        padding: 60px 40px;
+        min-height: auto;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .about-image img {
+        /* width:80%; */
+        min-width: 350px;
+    }
+
+    .about-text h2 {
+        font-size: 2.0rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-text p {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+    }
 }
 
 @media (max-height: 667px) {
@@ -3384,13 +3410,13 @@ textarea:focus {
 @media (max-height: 600px) and (orientation: landscape) {
     .hero,
     .hero-blog {
-        min-height: 120vh;
+        min-height: 100vh;
         padding: 100px 0 40px;
     }
 
     .hero::before,
     .hero-blog::before {
-        height: 120vh;
+        height: 100vh;
     }
 
     .hero-content {
@@ -3410,8 +3436,6 @@ textarea:focus {
     .nav-content {
         padding: 8px 25px;
         justify-content: flex-start;
-        backdrop-filter: none;
-        width: 95%;
     }
 
     .logo img {
@@ -3426,7 +3450,7 @@ textarea:focus {
     }
 
     .about {
-        padding: 60px 0;
+        padding: 60px 30px;
         min-height: auto;
     }
 
@@ -3436,23 +3460,23 @@ textarea:focus {
     }
 
     .about-image img {
-        width: 100%;
-        max-width: 350px;
+        /* width:80%; */
+        min-width: 350px;
     }
 
     .about-text h2 {
-        font-size: 1.8rem;
+        font-size: 2.0rem;
         margin-bottom: 1rem;
     }
 
     .about-text p {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
         margin-bottom: 0.8rem;
         line-height: 1.5;
     }
 
     .specialties {
-        padding: 50px 0;
+        padding: 90px 50px ;
         min-height: auto;
     }
 
@@ -3490,11 +3514,12 @@ textarea:focus {
     }
 
     .specialty-card {
-        min-width: 280px;
+        min-width: 200px;
         flex: 0 0 auto;
         padding: 1.5rem;
-        min-height: 200px;
-        scroll-snap-align: start;
+        min-height: 100px;
+        height: auto;
+        /* scroll-snap-align: start; */
     }
 
     .specialty-card h3 {
@@ -3579,7 +3604,7 @@ textarea:focus {
     /* ARTICLES EM LANDSCAPE */
     .articles {
         min-height: 100vh;
-        height: auto;
+        height: 120vh;
         padding: 2rem 0;
         margin-top: 40px;
     }
