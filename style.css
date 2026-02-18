@@ -406,6 +406,21 @@ h2 {
     filter: grayscale(0);
 }
 
+.link-curriculo{
+    text-decoration: none;
+    background: linear-gradient(45deg, var(--accent-color), var(--dark-color));
+    color: white;
+    border-radius: 5px;
+    padding: 10px 10px;
+    box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.884);
+    transition: transform 1s ease-in, background 1s ease-out;
+}
+
+.link-curriculo:hover {
+    background: linear-gradient(45deg, var(--dark-color), var(--accent-color));
+}
+
+
 /* ===== ESPECIALIDADES COM CARROSSEL ===== */
 .specialties {
     padding: var(--section-spacing) 0;
@@ -3369,7 +3384,7 @@ textarea:focus {
     }
 
     .about {
-        padding: 60px 40px;
+        padding: 10px 10px;
         min-height: auto;
     }
 
