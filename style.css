@@ -3359,7 +3359,7 @@ textarea:focus {
     }
     .horizontal-timeline {
         overflow-x: hidden;
-        padding: 10px ;
+        padding: 10px 60px ;
     }
 }
 
@@ -3384,7 +3384,7 @@ textarea:focus {
     }
 
     .about {
-        padding: 10px 10px;
+        padding: 70px 10px;
         min-height: auto;
     }
 
@@ -3850,3 +3850,4 @@ textarea:focus {
         background-attachment: scroll;
     }
 }
+
