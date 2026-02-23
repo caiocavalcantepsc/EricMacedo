@@ -1550,6 +1550,33 @@ h2 {
     gap: 1rem;
 }
 
+.desenvolvedor {
+    text-align: center;
+}
+
+.meu-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.meu-link-img {
+    height: 20px; /* ou o tamanho desejado */
+    width: auto;
+}
+
+/* .meu-link::after{
+    content: url('Media/logo\ ancora\ pseudo.png');
+    right: 0;
+    display: inline;
+    left: 0;
+    position: relative;
+    width: 5px;
+    height: 5px;
+
+} */
+
+
 .footer-bottom a {
     color: var(--light-color);
     text-decoration: none;
@@ -2317,7 +2344,6 @@ textarea:focus {
 
     .footer-column:last-child {
         grid-column: 1 / -1;
-        text-align: center;
     }
 
     .hero-buttons {
@@ -2862,6 +2888,8 @@ textarea:focus {
         flex-direction: column;
         gap: 1rem;
     }
+
+
 
     .whatsapp-float {
         bottom: 1.5rem;
